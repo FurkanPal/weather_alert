@@ -2,14 +2,21 @@ import requests
 from twilio.rest import Client
 import os
 
+from day35.get_user_location import get_user_location
+
+# Locate user
+latitude, longtitude = get_user_location()
+
+
 OWM_endpoints = "https://api.openweathermap.org/data/2.5/onecall"
 api_key = os.environ.get("api_key")
 weather_params = {
-    "lat": 51.759050,
-    "lon": 19.458600,
+    "lat": latitude,
+    "lon": longtitude,
     "appid": api_key,
     "exclude": "current, minutely, daily"
 }
+
 will_rain = False
 # Twillio
 account_sid = "[]"
