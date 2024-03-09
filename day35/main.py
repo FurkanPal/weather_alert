@@ -17,7 +17,9 @@ weather_params = {
     "exclude": "current, minutely, daily"
 }
 
+storm = False
 will_rain = False
+clear = False
 # Twillio
 account_sid = "[]"
 auth_token = os.environ.get("token")
@@ -30,14 +32,26 @@ wearher_slice = weather_data["hourly"][0:12]
 
 for hourly in wearher_slice:
     condition_code = hourly["weather"][0]["id"]
-    if condition_code > 700:
+    if 200 <= condition_code <= 230:
+        storm = True
+    elif condition_code >= 700:
         will_rain = True
+    elif condition_code == 800:
+        clear = True
 
 if will_rain == True:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-        body="[]",
-        from_="[]",
-        to="[]"
+        body="",
+        from_="",
+        to=""
+    )
+    print(message.status)
+elif storm:
+    client = Client(account_sid, auth_token)
+    message = client.messages.create(
+        body="⚠️ Severe Storm Alert ⚠️\nStay Safe!\n- [Your Name/Organization]",
+        from_="",
+        to=""
     )
     print(message.status)

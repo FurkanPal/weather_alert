@@ -13,7 +13,7 @@ Before using this script, make sure you have the following:
 3. **Python Libraries**:
     - `requests`: To make HTTP requests to the OpenWeatherMap API.
     - `twilio`: To interact with the Twilio API and send SMS messages.
-
+4.  **Nominatim Api will pull your location, by using this tool you will aggree to share your location.**
 ## Setup
 
 1. **Clone or Download**: Clone the repository to your local machine.
