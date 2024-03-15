@@ -13,7 +13,7 @@ Before using this script, make sure you have the following:
 3. **Python Libraries**:
     - `requests`: To make HTTP requests to the OpenWeatherMap API.
     - `twilio`: To interact with the Twilio API and send SMS messages.
-4.  **Nominatim Api will pull your location, by using this tool you will aggree to share your location.**
+4.  **Nominatim Api**: will pull your location, by using this tool you will aggree to share your location.**
 ## Setup
 
 1. **Clone or Download**: Clone the repository to your local machine.
@@ -41,7 +41,8 @@ python weather_alert.py
 
 - **Twilio Integration**: If rain is predicted within the next 12 hours, the script sends an SMS alert using Twilio. Ensure you have sufficient Twilio credits or balance to send SMS messages.
 
-- **Location and Weather Parameters**: Modify the latitude and longitude coordinates in the `weather_params` dictionary to specify the location for which you want to check the weather. You can also adjust other parameters such as `exclude` to include or exclude specific weather data (e.g., current weather, minutely forecast, daily forecast).
+- **Nominatim Api**: This api will pull your location latitude and longitude `weather_params` dictionary to specify the location check where ever you are the weather. You can also adjust other parameters such as `exclude` to include or exclude specific weather data (e.g., current weather, minutely forecast, daily forecast).
+
 
 ## Customization
 
