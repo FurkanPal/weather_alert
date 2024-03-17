@@ -21,7 +21,7 @@ storm = False
 will_rain = False
 clear = False
 # Twillio
-account_sid = "[]"
+account_sid = "[Your Api id]"
 auth_token = os.environ.get("token")
 
 # Weather
@@ -42,16 +42,14 @@ for hourly in wearher_slice:
 if will_rain == True:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-        body="",
-        from_="",
-        to=""
+        body="⚠️ Heavy rain ⚠️\nDon't forget your umbrella!\n- [Your Name/Organization]",
+        from_="[YourTwilioApiNumber]",
+        to="[UserPhoneNumber]"
     )
-    print(message.status)
 elif storm:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
         body="⚠️ Severe Storm Alert ⚠️\nStay Safe!\n- [Your Name/Organization]",
-        from_="",
-        to=""
+        from_="[YourTwilioApiNumber]",
+        to="[UserPhoneNumber]"
     )
-    print(message.status)
