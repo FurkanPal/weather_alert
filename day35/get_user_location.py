@@ -13,8 +13,9 @@ import requests
 # latitude, longitude = get_user_location()
 location = "349727"
 endpoint_url = f"http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/{location}"
+apikey = ""
 query_params = {
-    'apikey': 'nIOP0GcY0H3k3JPAtajGyTiszJBmLls2',
+    'apikey': f'{apikey}',
     'language': 'en-us',
     'details': 'true',
     'metric': 'true'
