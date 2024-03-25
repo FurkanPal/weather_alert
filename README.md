@@ -6,14 +6,14 @@ This script utilizes the OpenWeatherMap API to check if it will rain within the 
 
 Before using this script, make sure you have the following:
 
-1. **OpenWeatherMap API Key**: You need to sign up for an account on [OpenWeatherMap](https://openweathermap.org/) to get an API key. This key allows you to access weather data.
+1. **accuweather API Key**: You need to sign up for an account on [accuweather](https://developer.accuweather.com/) to get an API key. This key allows you to access weather data.
 
 2. **Twilio Account SID and Auth Token**: You must have a Twilio account ([Twilio](https://www.twilio.com/)) and obtain your Account SID and Auth Token from the Twilio dashboard.
 
 3. **Python Libraries**:
     - `requests`: To make HTTP requests to the OpenWeatherMap API.
     - `twilio`: To interact with the Twilio API and send SMS messages.
-4.  **Nominatim Api**: will pull your location, by using this tool you will aggree to share your location.**
+4.  ****: will pull your location, by using this tool you will aggree to share your location.**
 ## Setup
 
 1. **Clone or Download**: Clone the repository to your local machine.
@@ -37,11 +37,11 @@ python weather_alert.py
 
 ## Script Overview
 
-- **OpenWeatherMap API Endpoint**: The script uses the One Call API endpoint (`https://api.openweathermap.org/data/2.5/onecall`) to fetch weather data for a specific location.
+- **AccuWeather API Endpoint**: The script uses the forecast API endpoint (`http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/{location}`) to fetch weather data for a specific location.
 
 - **Twilio Integration**: If rain is predicted within the next 12 hours, the script sends an SMS alert using Twilio. Ensure you have sufficient Twilio credits or balance to send SMS messages.
 
-- **Nominatim Api**: This api will pull your location latitude and longitude `weather_params` dictionary to specify the location check where ever you are the weather. You can also adjust other parameters such as `exclude` to include or exclude specific weather data (e.g., current weather, minutely forecast, daily forecast).
+- **Nominatim Api**: This api will pull your location `query_params` dictionary to specify the location to check the weather where ever you are. You can also adjust other parameters such as `exclude` to include or exclude specific weather data (e.g., current weather, minutely forecast, daily forecast).
 
 
 ## Customization
@@ -50,12 +50,8 @@ python weather_alert.py
 
 - **Phone Numbers**: Replace the placeholder phone numbers (`from_` and `to`) with your actual Twilio phone number and the recipient's phone number.
 
-## Error Handling
-
-- The script includes error handling to manage HTTP request errors when fetching weather data from the OpenWeatherMap API (`response.raise_for_status()`).
-
 ## Notes
 
-- **Rate Limits**: Be mindful of rate limits imposed by the OpenWeatherMap API and Twilio to avoid exceeding usage limits.
+- **Rate Limits**: Be mindful of rate limits imposed by the AccuWeather API and Twilio to avoid exceeding usage limits.
 
-- **Cost Considerations**: Check the pricing plans for both OpenWeatherMap and Twilio, as excessive usage may incur costs.
+- **Cost Considerations**: Check the pricing plans for both AccuWeather and Twilio, as excessive usage may incur costs.
