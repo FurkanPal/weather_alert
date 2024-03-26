@@ -13,7 +13,7 @@ Before using this script, make sure you have the following:
 3. **Python Libraries**:
     - `requests`: To make HTTP requests to the OpenWeatherMap API.
     - `twilio`: To interact with the Twilio API and send SMS messages.
-4.  ****: will pull your location, by using this tool you will aggree to share your location.**
+4.  **Location**: will pull your location, by using your ip address. You will agree to share your location.**
 ## Setup
 
 1. **Clone or Download**: Clone the repository to your local machine.
@@ -39,9 +39,9 @@ python weather_alert.py
 
 - **AccuWeather API Endpoint**: The script uses the forecast API endpoint (`http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/{location}`) to fetch weather data for a specific location.
 
-- **Twilio Integration**: If rain is predicted within the next 12 hours, the script sends an SMS alert using Twilio. Ensure you have sufficient Twilio credits or balance to send SMS messages.
+- **Twilio Integration**: If storm is predicted within the next 12 hours, the script sends an SMS alert using Twilio. Ensure you have sufficient Twilio credits or balance to send SMS messages.
 
-- **Nominatim Api**: This api will pull your location `query_params` dictionary to specify the location to check the weather where ever you are. You can also adjust other parameters such as `exclude` to include or exclude specific weather data (e.g., current weather, minutely forecast, daily forecast).
+- **ipinfo Api**: This api will pull your location to specify the location for check the weather where ever you are. 
 
 
 ## Customization
