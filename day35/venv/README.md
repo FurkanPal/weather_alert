@@ -1,4 +1,4 @@
-# Weather Alert System with Twilio Integration
+ # Weather Alert System with Twilio Integration
 
 This script utilizes the OpenWeatherMap API to check if it will rain within the next 12 hours at a specific location. If rain is predicted, it sends an SMS alert using Twilio to a designated phone number.
 
